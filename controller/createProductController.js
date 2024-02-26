@@ -87,3 +87,23 @@ export const deleteSingleProduct = (req, res) => {
         message: "Single Product Delete Successfully",
     });
 }
+
+
+
+// show all product page
+export const showProductPage = (req, res) => {
+    res.render("view");
+}
+
+
+// go to single page 
+
+export const showSinglePage =  (req, res) => {
+    res.render("single");
+}
+
+// go to single page 
+
+export const showCreatePage =  (req, res) => {
+    res.render("create");
+}

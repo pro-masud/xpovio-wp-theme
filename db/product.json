@@ -1,47 +1,29 @@
 [
   {
-    "id": "65dc558db61f2a586d15b5cf",
+    "id": "65dc5b82897df42aa55d5eb",
     "name": "masud rana",
     "slug": "masud-rana",
     "regularPrice": "300",
     "selaPrice": "200",
     "stock": "20",
-    "productPhoto": "1708938637914_7588_logo.png"
+    "productPhoto": "1708940162404_9395_logo.png"
   },
   {
-    "id": "65dc56ae695f8c710c55172",
-    "name": "vesion pro max",
-    "slug": "vesion-pro-max",
-    "regularPrice": "200",
-    "selaPrice": "120",
-    "stock": "30",
-    "productPhoto": "1708938926826_9143_banner-two-bg.png"
+    "id": "65dc5b97f0263d4fd479b51f",
+    "name": "masud pro rana",
+    "slug": "masud-pro-rana",
+    "regularPrice": "300",
+    "selaPrice": "200",
+    "stock": "20",
+    "productPhoto": "1708940183839_1076_logo.png"
   },
   {
-    "id": "65dc576338f7cb4ec4978e8d",
-    "name": "adsff",
-    "slug": "adsff",
-    "regularPrice": "asdf",
-    "selaPrice": "asdf",
-    "stock": "asdf",
-    "productPhoto": "1708939107854_694_logo.png"
-  },
-  {
-    "id": "65dc57961d1e21d2971f26f9",
-    "name": "adsf",
-    "slug": "adsf",
-    "regularPrice": "asdf",
-    "selaPrice": "asdf",
-    "stock": "asdf",
-    "productPhoto": "1708939158559_4390_logo.png"
-  },
-  {
-    "id": "65dc57a5c40d786107f0a5e3",
-    "name": "asdf",
-    "slug": "asdf",
-    "regularPrice": "asdf",
-    "selaPrice": "asdf",
-    "stock": "asdf",
-    "productPhoto": "1708939173457_4622_logo.png"
+    "id": "65dc5be4e3f697d7f0c0e2a9",
+    "name": "alo pro max",
+    "slug": "alo-pro-max",
+    "regularPrice": "333",
+    "selaPrice": "200",
+    "stock": "23",
+    "productPhoto": "1708940260289_1981_logo.png"
   }
 ]
