@@ -103,7 +103,16 @@ export const showProductPage = (req, res) => {
 // go to single page 
 
 export const showSinglePage =  (req, res) => {
-    res.render("single");
+    const { slug } = req.params;
+
+    // get all data here
+    const prodateData = JSON.parse(fs.readFileSync("db/product.json").toString());
+
+    // find single data to json database
+    const singleData = prodateData.find(data => data.slug === slug);
+    res.render("single", {
+        product: singleData
+    });
 }
 
 // go to single page 
