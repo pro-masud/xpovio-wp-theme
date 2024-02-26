@@ -1,5 +1,6 @@
 import express from "express";
-import { createProduct, getAllProduct } from "../controller/createProductController.js";
+import { createProduct, getAllProduct, getSingleProduct } from "../controller/createProductController.js";
+import { productImageFileUpload } from "../util/multer.js";
 
 // init express js router
 const router = express.Router();
@@ -8,7 +9,8 @@ const router = express.Router();
 // product router creation
 router.get("/product", getAllProduct );
 
-router.post("/product", createProduct);
+router.get("/product/:slug", getSingleProduct);
+router.post("/product", productImageFileUpload, createProduct);
 
 // export express router
 export default router;
