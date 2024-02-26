@@ -22,9 +22,14 @@ export const getSingleProduct = (req, res) => {
     // create json db database within product data
     const prodateData = JSON.parse(fs.readFileSync("db/product.json").toString());
 
-    const singleData = prodateData.find((data) => data.slug === slug);
+    const singleProduct = prodateData.find((data) => data.slug === slug);
 
-    res.status(400).json(singleData);
+    if(!prodateData){
+        res.singleProduct(400).json({message: "Product Data Not Found"});
+        return;
+    }else{
+        res.status(400).json(singleProduct);
+    }
 }
 
 
@@ -32,7 +37,11 @@ export const getSingleProduct = (req, res) => {
 export const createProduct = (req, res) => {
     const {name, regularPrice, selaPrice, stock, productPhoto} = req.body;
 
-
+    // user input validation
+    if(!name || !regularPrice){
+        res.status(400).json({message: "Fields Must Not Be Empty !!!"});
+        return;
+    }
     // create json db database within product data
     const prodateData = JSON.parse(fs.readFileSync("db/product.json").toString());
 
@@ -61,8 +70,20 @@ export const createProduct = (req, res) => {
 
     fs.writeFileSync("db/product.json", JSON.stringify(prodateData));
 
+    res.status(201).redirect('/');
+}
+
+
+export const deleteSingleProduct = (req, res) => {
+    const { id } = req.params;
+
+    // create json db database within product data
+    const prodateData = JSON.parse(fs.readFileSync("db/product.json").toString());
+
+    const updateProductData = prodateData.filter((data) => data.id !== id);
+
+    fs.writeFileSync("db/product.json", JSON.stringify(updateProductData));
     res.status(201).json({
-            prodateData,
-            message: "Single Product Data Creation Successfully Complete"
-        });
+        message: "Single Product Delete Successfully",
+    });
 }
