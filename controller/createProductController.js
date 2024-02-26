@@ -133,3 +133,30 @@ export const showEditePage =  (req, res) => {
         product: updateData
     });
 }
+
+export const showUpdateProduct = (req, res) => {
+    // get data update form 
+    const {name, regularPrice, selaPrice, stock, productPhoto} = req.body;
+    const { id } = req.params;
+
+
+    const updateProdateData = JSON.parse(fs.readFileSync("db/product.json").toString());
+
+    // get photo name here
+    let photo_name = updateProdateData[updateProdateData.findIndex((data) => data.id === id)].productPhoto;
+    if(req.file?.filename){
+        photo_name = req.file.filename;
+    }
+    updateProdateData[updateProdateData.findIndex((data) => data.id === id)] = {
+        id,
+        name,
+        slug: createProductSlug(name),
+        regularPrice,
+        selaPrice,
+        stock,
+        productPhoto: photo_name
+    }
+
+    fs.writeFileSync("db/product.json", JSON.stringify(updateProdateData));
+    res.redirect('/');
+}

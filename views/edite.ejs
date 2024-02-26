@@ -26,7 +26,7 @@
               <div class="col-lg-6 offset-lg-2">
                 <a class="btn btn-warning" href="/">Back</a>
                 <h3 class="display-6">Create Product Now</h3>
-                  <form method="POST" action="/product" enctype="multipart/form-data">
+                  <form method="POST" action="/update/<%= product.id %>" enctype="multipart/form-data">
                       <div class="mb-1">
                           <label for="exampleInputEmail1" class="form-label">Product Name</label>
                           <input name="name" type="text" class="form-control" value="<%= product.name %>" >
