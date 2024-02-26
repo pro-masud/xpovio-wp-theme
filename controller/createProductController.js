@@ -92,7 +92,11 @@ export const deleteSingleProduct = (req, res) => {
 
 // show all product page
 export const showProductPage = (req, res) => {
-    res.render("view");
+     // get all product data here
+     const prodateData = JSON.parse(fs.readFileSync("db/product.json").toString());
+    res.render("view", {
+        products: prodateData
+    });
 }
 
 
