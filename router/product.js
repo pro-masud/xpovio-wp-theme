@@ -11,11 +11,10 @@ router.get("/", showProductPage);
 
 router.get("/single/:slug", showSinglePage);
 
-
 router.get("/create", showCreatePage);
 
 router.get("/product/:slug", getSingleProduct);
-router.delete("/product/:id", deleteSingleProduct);
+router.get("/product-item/:id", deleteSingleProduct);
 router.post("/product", productImageFileUpload, createProduct);
 
 // export express router

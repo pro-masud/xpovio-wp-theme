@@ -83,9 +83,7 @@ export const deleteSingleProduct = (req, res) => {
     const updateProductData = prodateData.filter((data) => data.id !== id);
 
     fs.writeFileSync("db/product.json", JSON.stringify(updateProductData));
-    res.status(201).json({
-        message: "Single Product Delete Successfully",
-    });
+    res.redirect('/');
 }
 
 
