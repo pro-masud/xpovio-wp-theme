@@ -118,3 +118,18 @@ export const showSinglePage =  (req, res) => {
 export const showCreatePage =  (req, res) => {
     res.render("create");
 }
+
+
+// edite product page
+export const showEditePage =  (req, res) => {
+    const { id } = req.params;
+
+    // get all data here
+    const prodateData = JSON.parse(fs.readFileSync("db/product.json").toString());
+
+    // find single data to json database
+    const updateData = prodateData.find(data => data.id === id);
+    res.render("edite", {
+        product: updateData
+    });
+}
