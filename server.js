@@ -3,6 +3,7 @@ import dotenv from "dotenv";
 import colors from "colors";
 import multer from "multer";
 import user from "./router/user.js";
+import productData from "./router/product.js"
 import EJSLayouts from "express-ejs-layouts";
 
 // init dotenv config
@@ -27,6 +28,7 @@ app.use(express.urlencoded({ extended: false }));
 
 // init all router 
 app.use(user);
+app.use(productData);
 
 
 // create server within express js
