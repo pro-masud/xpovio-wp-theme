@@ -32,7 +32,7 @@ const CustomerSahema = mongoose.Schema({
         require: true,
         unique: true,
     },
-    photos: {
+    userPhoto: {
         type: String,
         default: "avada.png",
     },
