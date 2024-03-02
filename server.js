@@ -5,6 +5,7 @@ import multer from "multer";
 import user from "./router/user.js";
 import productData from "./router/product.js"
 import EJSLayouts from "express-ejs-layouts";
+import { mongodbCollection } from "./mongodb/mongodb.js";
 
 // init dotenv config
 dotenv.config();
@@ -33,5 +34,6 @@ app.use(productData);
 
 // create server within express js
 app.listen(PORT, () => {
+    mongodbCollection();
     console.log(`Server Runing Is Port Number ${PORT}`.bgGreen.black);
 });
