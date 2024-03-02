@@ -1,6 +1,7 @@
 import mongoose from "mongoose";
 
-const CustomerSahema = mongoose.Schema({
+
+const CustomerData = mongoose.Schema({
     name: {
         type: String,
         required: true,
@@ -32,7 +33,7 @@ const CustomerSahema = mongoose.Schema({
         require: true,
         unique: true,
     },
-    userPhoto: {
+    customerPhoto: {
         type: String,
         default: "avada.png",
     },
@@ -43,4 +44,5 @@ const CustomerSahema = mongoose.Schema({
 });
 
 
-export default mongoose.model("Customer", CustomerSahema);
+// export default data for database
+export default mongoose.model("CustomerData", CustomerData);
