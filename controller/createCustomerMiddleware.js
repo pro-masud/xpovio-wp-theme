@@ -32,3 +32,14 @@ export const getAllCustomer = async (req, res) => {
 
     res.status(200).json(getAllData);
 }
+
+// get all Customer data here
+export const getSingleCustomer = async (req, res) => {
+
+    // get params data here
+    const { id }       = req.params;
+
+    const getSingleData = await CustomerData.findOne({_id: id});
+
+    res.status(200).json(getSingleData);
+}
