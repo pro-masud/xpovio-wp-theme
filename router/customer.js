@@ -1,5 +1,5 @@
 import express from "express";
-import { createCustomerMiddleware, getAllCustomer, getSingleCustomer } from "../controller/createCustomerMiddleware.js";
+import { createCustomerMiddleware, getAllCustomer, getSingleCustomer, deleteSingleCustomer } from "../controller/createCustomerMiddleware.js";
 import { customerImageFileUpload } from "../util/multer.js";
 
 
@@ -11,6 +11,7 @@ const router = express.Router();
 router.post('/customer', customerImageFileUpload, createCustomerMiddleware);
 router.get("/customer", getAllCustomer);
 router.get("/customer/:id", getSingleCustomer);
+router.delete("/customer/:id", deleteSingleCustomer);
 
 
 

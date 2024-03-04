@@ -43,3 +43,15 @@ export const getSingleCustomer = async (req, res) => {
 
     res.status(200).json(getSingleData);
 }
+
+
+// get all Customer data here
+export const deleteSingleCustomer = async (req, res) => {
+
+    // get params data here
+    const { id }       = req.params;
+
+    const deleteSingleData = await CustomerData.deleteOne({_id: id});
+
+    res.status(200).json(deleteSingleData);
+}
